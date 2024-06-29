@@ -9,6 +9,6 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     if (result.status === 'fulfilled') {
       return { status: 'fulfilled', value: result.value };
     }
-    return { status: 'rejected', value: result.value };
+    return { status: 'rejected', reason: result.reason };
   }));
 }
