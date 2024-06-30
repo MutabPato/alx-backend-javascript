@@ -3,9 +3,9 @@ export default class Building {
     if (typeof sqft !== 'number') {
       throw new TypeError('sqft must be a number');
     }
-    if (new.target === Building) {
+    /*if (new.target === Building) {
       throw new Error('Cannot construct Building instances directly');
-    }
+    }*/
     if (typeof this.evacuationWarningMessage !== 'function') {
       throw new Error('Class extending Building must override evacuationWarningMessage');
     }
