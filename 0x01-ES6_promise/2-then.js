@@ -8,7 +8,7 @@ export default function handleResponseFromAPI(promise) {
   });
 }
 
-handleResponseFromAPI()
+handleResponseFromAPI(true)
   .then((data) => {
     console.log(data);
   })
