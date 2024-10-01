@@ -9,12 +9,11 @@ export default function handleResponseFromAPI(promise) {
 }
 
 handleResponseFromAPI(true)
-  .then((data) => {
-    console.log(data);
+  .then(() => {
+    console.log('Got a response from the API');
   })
   .catch((error) => {
     console.error(error.message);
   })
   .finally(() => {
-    console.log('Got a response from the API');
   });
