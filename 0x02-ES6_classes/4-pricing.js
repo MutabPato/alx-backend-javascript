@@ -27,9 +27,9 @@ export default class Pricing {
   }
 
   static convertPrice(amount, conversionRate) {
-  if (typeof amount != 'number' || typeof conversionRate != 'number') {
-  throw new TypeError('Both amount and conversionRate must be numbers');
-  }
-  return (amount * conversionRate);
+    if (typeof amount !== 'number' || typeof conversionRate !== 'number') {
+      throw new TypeError('Both amount and conversionRate must be numbers');
+    }
+    return (amount * conversionRate);
   }
 }
