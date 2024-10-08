@@ -1,6 +1,4 @@
-const weakMap = new WeakMap();
-
-export { weakMap };
+export const weakMap = new WeakMap();
 
 export function queryAPI(endpoint) {
   const count = weakMap.get(endpoint) || 0;
