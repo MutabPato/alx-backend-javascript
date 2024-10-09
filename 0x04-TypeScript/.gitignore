@@ -2,8 +2,11 @@
 *.js
 task_0/*.json
 task_0/*.js
+task_0/node_modules/
 task_1/*.json
 task_1/*.js
+task_1/node_modules/
 task_2/*.json
 task_2/*.js
+task_2/node_modules/
 node_modules/
