@@ -6,3 +6,4 @@ task_1/*.json
 task_1/*.js
 task_2/*.json
 task_2/*.js
+node_modules/
