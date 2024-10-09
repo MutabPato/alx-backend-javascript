@@ -1,0 +1,8 @@
+*.json
+*.js
+task_0/*.json
+task_0/*.js
+task_1/*.json
+task_1/*.js
+task_2/*.json
+task_2/*.js
