@@ -13,6 +13,7 @@ function countStudents(fileName) {
       if (error) {
         reject(Error('Cannot load the database'));
       } else {
+        let output = '';
         const lines = data.toString().split('\n');
         for (let i = 0; i < lines.length; i += 1) {
           if (lines[i]) {
@@ -31,13 +32,14 @@ function countStudents(fileName) {
           }
         }
         const l = length - 1;
-        console.log(`Number of students: ${l}`);
+        output += `Number of students: ${l}\n`;
         for (const [key, value] of Object.entries(fields)) {
           if (key !== 'field') {
-            console.log(`Number of students in ${key}: ${value}. List: ${students[key].join(', ')}`);
+            output += `Number of students in ${key}: ${value}.`;
+            output += `List: ${students[key].join(', ')}\n`;
           }
         }
-        resolve(data);
+        resolve(output);
       }
     });
   });
