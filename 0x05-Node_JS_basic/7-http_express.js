@@ -1,4 +1,5 @@
 const express = require('express');
+
 const { readFile } = require('fs');
 
 const app = express();
@@ -9,9 +10,9 @@ function countStudents(fileName) {
   const fields = {};
   let length = 0;
   return new Promise((resolve, reject) => {
-    readFile(fileName, (error, data) => {
-      if (error) {
-        reject(Error('Cannot load the database'));
+    readFile(fileName, (err, data) => {
+      if (err) {
+        reject(err);
       } else {
         let output = '';
         const lines = data.toString().split('\n');
@@ -35,7 +36,7 @@ function countStudents(fileName) {
         output += `Number of students: ${l}\n`;
         for (const [key, value] of Object.entries(fields)) {
           if (key !== 'field') {
-            output += `Number of students in ${key}: ${value}.`;
+            output += `Number of students in ${key}: ${value}. `;
             output += `List: ${students[key].join(', ')}\n`;
           }
         }
@@ -46,7 +47,7 @@ function countStudents(fileName) {
 }
 
 app.get('/', (req, res) => {
-  res.send('Hello ALX!');
+  res.send('Hello Holberton School!');
 });
 app.get('/students', (req, res) => {
   countStudents(process.argv[2].toString()).then((output) => {
